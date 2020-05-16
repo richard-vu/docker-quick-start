@@ -12,6 +12,8 @@
 09.  docker restart [containerId] : Restart a container
 10.  docker rm [containerId] : Remove a container when it is stop
 11.  docker rmi [imageName] : Remove a image
+12.  docker stop $(docker ps -a -q): Stop all container is running
+13.  docker rm $(docker ps -a -q): Delete All container
 
 ## Network in Docker
 01. docker network ls: Show all list networks
