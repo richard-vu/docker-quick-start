@@ -1,0 +1,79 @@
+
+#Step 1: Building an image
+#Syntax: docker build -t <image-name> <location of dockerfile>
+-------------------------------------------------------------------
+docker build -t 01-richard-httpd .
+
+#Step 2: List all the images
+#Syntax: docker images
+-------------------------------------------------------------------
+docker images
+
+#Step 3: Inspect the Image
+#Syntax: docker inspect image-name
+------------------------------------------------------------------
+docker inspect 01-richard-httpd
+
+#Step 4: Running a container from the image
+#Syntax: docker run -itd --name <container-name> -p <host-port>:<port in container> image-name:tag
+# note in the above syntax:
+# -d : represents (detached mode), note that if you dont run this in detached mode, the life of the container will be the life of the terminal in which you are executing it.
+# -p : represents the host-port to container-port mapping, if you substitute it with -P you will get a random port allocated by docker
+# --name : represents the name of the container 
+-------------------------------------------------------------------
+docker run -itd --name my-http-container-1 -p 9000:80 01-richard-httpd:latest
+docker run -itd --name my-http-container-2 -p 9001:80 01-richard-httpd:latest
+docker run -itd --name my-http-container-with-random-port -P 01-richard-httpd:latest
+
+#note if you run this it will NOT run in detached mode.
+docker run -it --name my-http-container-3 -p 9002:80 01-richard-httpd:latest
+
+Step 5: View all the containers
+-------------------------------------------------------------------
+# Shows all the containers which are running
+docker ps 
+
+#Shows all the containers stopped and running
+docker ps -a
+
+Step 6: Inspect the container and image
+-------------------------------------------------------------------
+docker inspect 01-richard-httpd
+
+Step 7: View Container logs
+-------------------------------------------------------------------
+
+# View the logs of the container
+docker logs 01-richard-httpd
+
+# Tail the logs of the container
+docker logs -ft 01-richard-httpd
+
+Step 8: Stop the container
+-------------------------------------------------------------------
+docker stop 01-richard-httpd
+
+Step 9: Stop the container
+-------------------------------------------------------------------
+docker start 01-richard-httpd
+
+Step 10: Logging into the container
+-------------------------------------------------------------------
+#Note: The container must be started before we can do this.
+docker exec -it 01-richard-httpd /bin/bash
+
+Step 11: Remove all the containers and images
+-------------------------------------------------------------------
+#Note: To remove an image the corresponding container built from that image will need to be removed.
+
+#Remove a specific container
+docker rm 01-richard-httpd
+
+#Remove all containers
+docker rm $(docker ps -a -q)
+
+# remove image (note: no containers for this image should be running)
+docker rmi 01-richard-httpd
+
+# remove all images
+docker rmi $(docker images -q)
