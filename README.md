@@ -15,8 +15,8 @@
 04.  docker stop [containerId] : Start container when it is start
 05.  docker restart [containerId] : Restart a container
 06.  docker rm [containerId] : Remove a container when it is stop
-07.  docker stop $(docker ps -a -q): Stop all container is running
-08.  docker rm $(docker ps -a -q): Delete All container
+07.  docker stop $(docker ps -a -q) : Stop all container is running
+08.  docker rm $(docker ps -a -q) : Delete All container
 09.  docker container attach containerid : Go to terminal container is running
 10.  CTRL + P + Q : Exit terminal, but container is running
 11.  docker history name_or_id_of_image : The history of container or images
