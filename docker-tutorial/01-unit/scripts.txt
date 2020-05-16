@@ -21,12 +21,9 @@ docker inspect 01-richard-httpd
 # -p : represents the host-port to container-port mapping, if you substitute it with -P you will get a random port allocated by docker
 # --name : represents the name of the container 
 -------------------------------------------------------------------
-docker run -itd --name my-http-container-1 -p 9000:80 01-richard-httpd:latest
-docker run -itd --name my-http-container-2 -p 9001:80 01-richard-httpd:latest
-docker run -itd --name my-http-container-with-random-port -P 01-richard-httpd:latest
-
-#note if you run this it will NOT run in detached mode.
-docker run -it --name my-http-container-3 -p 9002:80 01-richard-httpd:latest
+docker run -itd --name http-container-1 -p 9000:80 01-richard-httpd:latest
+docker run -itd --name http-container-2 -p 9001:80 01-richard-httpd:latest
+docker run -itd --name http-container-with-random-port -P 01-richard-httpd:latest
 
 Step 5: View all the containers
 -------------------------------------------------------------------
