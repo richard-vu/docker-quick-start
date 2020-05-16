@@ -14,6 +14,7 @@
 11.  docker rmi [imageName] : Remove a image
 12.  docker stop $(docker ps -a -q): Stop all container is running
 13.  docker rm $(docker ps -a -q): Delete All container
+14.  docker rmi $(docker images -q): Delete All images
 
 ## Network in Docker
 01. docker network ls: Show all list networks
