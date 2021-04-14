@@ -37,5 +37,5 @@
 06. docker network rm :	Remove one or more networks
 
 ## Docker Compose
-01. docker-compose up : run file docker-compose.yml
+01. docker-compose up --build -d : run file docker-compose.yml
 02. docker-compose down : Stop and delete container
