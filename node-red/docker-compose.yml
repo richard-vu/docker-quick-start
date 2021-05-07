@@ -17,10 +17,12 @@ services:
       - node-red-net
     volumes:
       - ./node-red-data:/data
+      - ./node-red-src:/data/src
     restart: always
 
 volumes:
   node-red-data:
+  node-red-src:
 
 networks:
   node-red-net:
