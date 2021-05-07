@@ -430,46 +430,5 @@
                 "file": "/usr/src/node-red/node_modules/node-red-node-tail/28-tail.js"
             }
         }
-    },
-    "node-red-contrib-obniz": {
-        "name": "node-red-contrib-obniz",
-        "version": "0.6.2",
-        "local": true,
-        "user": true,
-        "nodes": {
-            "obniz": {
-                "name": "obniz",
-                "types": [
-                    "obniz"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "node-red-contrib-obniz",
-                "file": "/data/node_modules/node-red-contrib-obniz/obniz.js"
-            },
-            "obniz-repeat": {
-                "name": "obniz-repeat",
-                "types": [
-                    "obniz-repeat"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "node-red-contrib-obniz",
-                "file": "/data/node_modules/node-red-contrib-obniz/obniz-repeat.js"
-            },
-            "obniz-function": {
-                "name": "obniz-function",
-                "types": [
-                    "obniz-function"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "node-red-contrib-obniz",
-                "file": "/data/node_modules/node-red-contrib-obniz/obniz-function.js"
-            }
-        }
     }
 }
