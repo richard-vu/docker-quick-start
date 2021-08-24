@@ -4,6 +4,7 @@
     "version": "0.0.1",
     "private": true,
     "dependencies": {
+        "node-red-contrib-firebase-data": "0.0.11",
         "node-red-contrib-obniz": "file:src/obniz-nodered-sdk"
     }
 }

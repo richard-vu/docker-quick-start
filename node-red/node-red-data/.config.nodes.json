@@ -1,7 +1,7 @@
 {
     "node-red": {
         "name": "node-red",
-        "version": "1.3.1",
+        "version": "2.0.5",
         "local": false,
         "user": false,
         "nodes": {
@@ -181,6 +181,17 @@
                 "user": false,
                 "module": "node-red",
                 "file": "/usr/src/node-red/node_modules/@node-red/nodes/core/function/90-exec.js"
+            },
+            "rbe": {
+                "name": "rbe",
+                "types": [
+                    "rbe"
+                ],
+                "enabled": true,
+                "local": false,
+                "user": false,
+                "module": "node-red",
+                "file": "/usr/src/node-red/node_modules/@node-red/nodes/core/function/rbe.js"
             },
             "tls": {
                 "name": "tls",
@@ -393,82 +404,33 @@
             }
         }
     },
-    "node-red-node-rbe": {
-        "name": "node-red-node-rbe",
-        "version": "0.5.0",
-        "local": false,
-        "user": false,
-        "nodes": {
-            "rbe": {
-                "name": "rbe",
-                "types": [
-                    "rbe"
-                ],
-                "enabled": true,
-                "local": false,
-                "user": false,
-                "module": "node-red-node-rbe",
-                "file": "/usr/src/node-red/node_modules/node-red-node-rbe/rbe.js"
-            }
-        }
-    },
-    "node-red-node-tail": {
-        "name": "node-red-node-tail",
-        "version": "0.3.0",
-        "local": false,
-        "user": false,
-        "nodes": {
-            "tail": {
-                "name": "tail",
-                "types": [
-                    "tail"
-                ],
-                "enabled": true,
-                "local": false,
-                "user": false,
-                "module": "node-red-node-tail",
-                "file": "/usr/src/node-red/node_modules/node-red-node-tail/28-tail.js"
-            }
-        }
-    },
-    "node-red-contrib-obniz": {
-        "name": "node-red-contrib-obniz",
-        "version": "0.6.2",
+    "node-red-contrib-firebase-data": {
+        "name": "node-red-contrib-firebase-data",
+        "version": "0.0.11",
         "local": true,
         "user": true,
         "nodes": {
-            "obniz": {
-                "name": "obniz",
+            "addFirebase": {
+                "name": "addFirebase",
                 "types": [
-                    "obniz"
+                    "addFirebase"
                 ],
                 "enabled": true,
                 "local": true,
                 "user": false,
-                "module": "node-red-contrib-obniz",
-                "file": "/data/node_modules/node-red-contrib-obniz/obniz.js"
+                "module": "node-red-contrib-firebase-data",
+                "file": "/data/node_modules/node-red-contrib-firebase-data/source/addFirebase.js"
             },
-            "obniz-repeat": {
-                "name": "obniz-repeat",
+            "firebaseCertificate": {
+                "name": "firebaseCertificate",
                 "types": [
-                    "obniz-repeat"
+                    "firebaseCertificate"
                 ],
                 "enabled": true,
                 "local": true,
                 "user": false,
-                "module": "node-red-contrib-obniz",
-                "file": "/data/node_modules/node-red-contrib-obniz/obniz-repeat.js"
-            },
-            "obniz-function": {
-                "name": "obniz-function",
-                "types": [
-                    "obniz-function"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "node-red-contrib-obniz",
-                "file": "/data/node_modules/node-red-contrib-obniz/obniz-function.js"
+                "module": "node-red-contrib-firebase-data",
+                "file": "/data/node_modules/node-red-contrib-firebase-data/source/firebaseCertificate.js"
             }
         }
     }
