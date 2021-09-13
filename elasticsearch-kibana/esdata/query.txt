@@ -1,0 +1,60 @@
+#cheking status
+GET /_cat/health?v
+GET /_cat/health?v=true&pretty
+GET /_cat/health?v=true&ts=false&pretty
+
+#working with index
+#Get all index
+GET /_cat/indices?v
+GET /_cat/indices?pretty
+
+#Create new index
+PUT /products
+PUT /products?pretty
+
+#Delete a index
+DELETE /students
+
+#Working Document
+PUT /students
+
+#create or update a document in student
+PUT /students/_doc/2
+{
+  "id":1,
+  "name":"Richard",
+  "age":"20"
+}
+
+POST /_bulk
+{"index":{"_index":"students", "_id":1}}
+{"id":1, "name":"Richard", "age":"20" }
+{"index":{"_index":"students", "_id":2}}
+{"id":2, "name":"Richard", "age":"20" }
+{"index":{"_index":"students", "_id":3}}
+{"id":3, "name":"Richard", "age":"20" }
+
+#Use curl import data.json file to index
+curl -H 'Content-Type: application/json' -XPOST "localhost:9200/bank/_bulk" --data-binary "@accounts.json"
+
+#Get document in index
+GET /students/_doc/2
+
+#Get all documents of bank
+GET /bank/_search
+{
+  "query": {"match_all": {}},
+  "sort": [
+    {
+      "balance": {
+        "order": "desc"
+      }
+    }
+  ],
+  "size": 100,
+  "from": 100,
+  "_source": ["account_number", "balance"]
+}
+
+#Delete a document
+DELETE /students/_doc/1

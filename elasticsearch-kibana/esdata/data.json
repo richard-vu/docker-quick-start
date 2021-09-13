@@ -1,0 +1,6 @@
+{"index":{"_index":"students", "_id":1}}
+{"id":1, "name":"Richard", "age":"20" }
+{"index":{"_index":"students", "_id":2}}
+{"id":2, "name":"Richard", "age":"20" }
+{"index":{"_index":"students", "_id":3}}
+{"id":3, "name":"Richard", "age":"20" }
