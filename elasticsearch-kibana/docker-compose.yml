@@ -30,5 +30,4 @@ networks:
     driver: bridge
 
 volumes:                              # TẠO Ổ ĐĨA
-  esdata:                           # ổ đĩa này lưu dữ liệu ở /esdata/
-    driver: local
+  esdata:                           # ổ đĩa này lưu dữ liệu ở /esdata
