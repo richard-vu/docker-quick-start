@@ -1,23 +1,16 @@
-version: '3.9'
+version: '3.1'
 
 services:
-  # Database
+
   db:
     image: mysql
-    container_name: mysql
     command: --default-authentication-plugin=mysql_native_password
-    volumes:
-      - ./db_data/:/var/lib/mysql
     restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: 'root'
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress
     ports:
-      - '3306:3306'
-    networks:
-      - wpsite
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+
   # phpmyadmin
   phpmyadmin:
     depends_on:
@@ -25,14 +18,13 @@ services:
     image: phpmyadmin/phpmyadmin
     restart: always
     ports:
-      - '8080:80'
+      - '8099:80'
     environment:
       PMA_HOST: db
-      MYSQL_ROOT_PASSWORD: password 
-    networks:
-      - wpsite
-  
-networks:
-  wpsite:
-volumes:
-  db_data:
+      MYSQL_ROOT_PASSWORD: root
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
