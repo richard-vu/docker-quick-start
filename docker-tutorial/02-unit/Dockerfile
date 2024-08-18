@@ -1,7 +1,7 @@
 # Updated as of May 16, 2020
 # FROM specified which image i want to download
 # Needs to be provided before any other section of code.
-FROM nginx:1.23
+FROM nginx:1.26.2
 
 #Author of the Docker File
 # MAINTAINER Pictolearn Note: MAINTAINER has been deprecated for LABEL, 
